@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         width: Dimensions.get('screen').width / 2,
     },
     category_title: {
-        color: 'black',
+        color: 'white',
         fontWeight: 'bold',
         textAlign: 'center',
         padding: 10,

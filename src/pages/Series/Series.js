@@ -1,13 +1,26 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, FlatList, ActivityIndicator, Text } from 'react-native';
 import styles from './Series.style';
 
-const Series = () => {
+//Diziler ekranında datamızı Custom Hook yapımızla çekiyoruz.
+import useFetch from '../../components/Hooks/useFetch';
+
+export default Series = () => {
+  const {data, loading} = useFetch();
+
+  if (loading) {
+    return <ActivityIndicator style={{flex: 1, justifyContent: "center"}} size="large"/>
+  }
+
+  const renderMovies = ({item}) => <Text style={{color: 'white'}}>{item.title}</Text>
+  
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Diziler Ekranı</Text>
+        <FlatList
+            numColumns={2}
+            horizontal={false}
+            data={data}
+            renderItem={renderMovies}/>
     </View>
-  )
-}
-
-export default Series;
+  );
+};
