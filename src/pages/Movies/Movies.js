@@ -5,7 +5,7 @@ import styles from './Movies.style';
 const Movies = () => {
   return (
     <View style={styles.container}>
-      <Text>Filmler Ekranı</Text>
+      <Text style={styles.title}>Filmler Ekranı</Text>
     </View>
   )
 }

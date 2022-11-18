@@ -5,7 +5,7 @@ import styles from './Series.style';
 const Series = () => {
   return (
     <View style={styles.container}>
-      <Text>Diziler Ekranı</Text>
+      <Text style={styles.title}>Diziler Ekranı</Text>
     </View>
   )
 }
