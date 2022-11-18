@@ -1,9 +1,12 @@
 import React from 'react';
-import { View, FlatList, ActivityIndicator, Text } from 'react-native';
+import { View, FlatList, ActivityIndicator} from 'react-native';
 import styles from './Series.style';
 
 //Diziler ekranında datamızı Custom Hook yapımızla çekiyoruz.
 import useFetch from '../../components/Hooks/useFetch';
+
+//Dizi datalarımızın tasarımlarını Card sayfamızda oluşturuyoruz.
+import SeriesCard from '../../components/Card/SeriesCard';
 
 export default Series = () => {
   const {data, loading} = useFetch();
@@ -12,7 +15,8 @@ export default Series = () => {
     return <ActivityIndicator style={{flex: 1, justifyContent: "center"}} size="large"/>
   }
 
-  const renderMovies = ({item}) => <Text style={{color: 'white'}}>{item.title}</Text>
+  //Dizi itemlerimizi SeriesCard'a yönlendiriyoruz.
+  const renderMovies = ({item}) => <SeriesCard series={item}/>
   
   return (
     <View style={styles.container}>

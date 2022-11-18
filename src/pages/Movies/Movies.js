@@ -1,9 +1,12 @@
 import React from 'react';
-import { View, FlatList, ActivityIndicator, Text } from 'react-native';
+import { View, FlatList, ActivityIndicator } from 'react-native';
 import styles from './Movies.style';
 
 //Filmler ekranında datamızı Custom Hook yapımızla çekiyoruz.
 import useFetch from '../../components/Hooks/useFetch';
+
+//Film datalarımızın tasarımlarını Card sayfamızda oluşturuyoruz.
+import MoviesCard from '../../components/Card/MoviesCard';
 
 export default Movies = () => {
   const {data, loading} = useFetch();
@@ -12,7 +15,8 @@ export default Movies = () => {
     return <ActivityIndicator style={{flex: 1, justifyContent: "center"}} size="large"/>
   }
 
-  const renderMovies = ({item}) => <Text style={{color: 'white'}}>{item.title}</Text>
+  //Film itemlerimizi MoviesCard'a yönlendiriyoruz.
+  const renderMovies = ({item}) => <MoviesCard movies={item}/>
   
   return (
     <View style={styles.container}>

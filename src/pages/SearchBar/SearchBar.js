@@ -3,6 +3,9 @@ import { View, TextInput, FlatList, ActivityIndicator } from 'react-native';
 import useFetch from '../../components/Hooks/useFetch';
 import styles from './SearchBar.style';
 
+//Search görüntülenecek datalarımızın tasarımlarını Card sayfamızda oluşturuyoruz.
+import SearchBarCard from '../../components/Card/SearchBarCard';
+
 //Tüm datamız üzerinde filtreleme işlemi yapan Search ekranı oluşturuyoruz.
 const SearchBar = () => {
   const {data, loading} = useFetch();
@@ -21,7 +24,8 @@ if (loading) {
     return <ActivityIndicator style={{flex: 1, justifyContent: "center"}} size="large" />
 }
 
-const renderMovies = ({item}) => <Text style={{color: 'white'}}>{item.title}</Text>
+//Searchda görüntülenecek itemlerimizi SearchBarCard'a yönlendiriyoruz.
+const renderMovies = ({item}) => <SearchBarCard search={item}/>
 
     return (
         <View style={styles.container}>
