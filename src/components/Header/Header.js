@@ -13,7 +13,7 @@ const Header = ({navigation}) => {
             <TouchableOpacity onPress={() => navigation.navigate('PopulerTitles')}>
               <Text style={styles.title}>BulutMD</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('SearchBar')}>
               <Ionicons style={styles.icon} name="search"/>
             </TouchableOpacity>
         </View>

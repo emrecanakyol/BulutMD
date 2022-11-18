@@ -10,6 +10,9 @@ import Series from './pages/Series';
 //Custom Headerımızı çağırıyoruz.
 import Header from './components/Header';
 
+//SearchBarımızı çağırıyoruz.
+import SearchBar from './pages/SearchBar';
+
 const Stack = createStackNavigator();
 
 const Router = () => {
@@ -19,6 +22,7 @@ const Router = () => {
         <Stack.Screen name='PopulerTitles' component={PopulerTitles}/>
         <Stack.Screen name='Movies' component={Movies}/>
         <Stack.Screen name='Series' component={Series}/>
+        <Stack.Screen name='SearchBar' component={SearchBar}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
