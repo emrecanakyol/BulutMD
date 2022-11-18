@@ -15,7 +15,10 @@ const SearchBar = () => {
         const filteredList = data.filter(search => {
         const searchedText = text.toLowerCase();
         const currentTitle = search.title.toLowerCase();
-        return currentTitle.indexOf(searchedText) > -1;
+        //Arama input’una 3 karakter girilince tüm veri üzerinde filtreleme koşulunu sağlamaktayız.
+        if( text.length > 2) {
+            return currentTitle.indexOf(searchedText) > -1;
+          }
     })
     setList(filteredList); 
 }
