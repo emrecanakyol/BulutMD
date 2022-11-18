@@ -23,7 +23,8 @@ export default Series = () => {
         <FlatList
             numColumns={2}
             horizontal={false}
-            data={data}
+            //Datamızda ilk 18 veriyi görüntülüyoruz.
+            data={data.slice(0,18)}
             renderItem={renderMovies}/>
     </View>
   );
