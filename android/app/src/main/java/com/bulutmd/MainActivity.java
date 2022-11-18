@@ -4,7 +4,18 @@ import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 
+//react-native-screen için import yapılandırmasıdır.
+import android.os.Bundle;
+
 public class MainActivity extends ReactActivity {
+
+  /**
+  Üstte importu yapılan react-native-screen için Android yapılandırmasıdır.
+  */
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
+  }
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
